@@ -1,57 +1,86 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mboa Market</title>
-    <!--Getsion du css -->
-    <link
-      rel="stylesheet"
-      href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- en tete de page  -->
-    <header id="entete">
-      <div class="container">
-        <div id="logo">
-          <a href=""> Mboa<span>Market</span> </a>
-        </div>
 
-        <div id="menu">
-          <a href="#" id="btn_panier">
-            Panier
-            <span> <i class="fa-solid fa-cart-shopping"> </i> </span>
-          </a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mboa Market</title>
+  <!--Getsion du css -->
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- en tete de page  -->
+  <header id="entete">
+    <div class="container">
+      <div id="logo">
+        <a href=""> Mboa<span>Market</span> </a>
       </div>
-    </header>
 
-    <!-- conteneur de la page -->
-    <main id="conteneur">
-      <section id="carrousel">
-
-      </section>
-    </main>
-
-    <!-- Pied de page -->
-    <footer id="pied">
-      <div class="container">
-        <p>
-          &copy; 2026 <strong>Mboa<span>Market</span></strong> — Tous droits
-          réservés.
-        </p>
-        <div class="socials">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+      <div id="menu">
+        <a href="#" id="btn_panier">
+          Panier
+          <span> <i class="fa-solid fa-cart-shopping"> </i> </span>
+          <span id="nb_articles" class="hide">0</span>
+        </a>
       </div>
-    </footer>
+    </div>
+  </header>
 
-    <!--gestion du javascript-->
-     <script type="text/javascript" src="js/carrousel.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-  </body>
+  <!-- conteneur de la page -->
+  <main id="conteneur">
+    <!-- section carrousel -->
+    <section id="carrousel">
+
+    </section>
+    <!-- SECTION BOUTIQUE -->
+    <section id="boutique">
+      <div class="boutique_entete">
+        <h2>Nos Produits du marché</h2>
+        <p id="nb_resultats"></p>
+      </div>
+
+      <!--Filtre de recherche de produits-->
+      <div class="boutique_outils">
+        <div class="recherche">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="recherche" placeholder="Rechercher : poivre blanc, poulet..." />
+        </div>
+        <select id="tri">
+          <option value="default">Trier par : recommandés</option>
+          <option value="prix_croissant">Prix croissant</option>
+          <option value="prix_decroissant">Prix décroissant</option>
+          <option value="nom">Nom (A -> Z)</option>
+        </select>
+      </div>
+      <div>
+
+      </div>
+
+      <!-- listes des categories -->
+      <div class="categories"></div>
+
+
+      <!-- liste des produits -->
+      <div class="produits"></div>
+    </section>
+  </main>
+
+
+  <!-- poed de page -->
+  <footer id="pied">
+    <p>
+      <b>Mboa<span>Market</span></b>
+      Le gout de ca livre chez vous
+    </p>
+    <p>Tel : 616 00 73 02 | email: mboa@iuc.com </p>
+  </footer>
+
+  <!--gestion du javascript-->
+  <script type="text/javascript" src="js/carrousel.js"></script>
+  <script type="text/javascript" src="js/boutique.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+
 </html>

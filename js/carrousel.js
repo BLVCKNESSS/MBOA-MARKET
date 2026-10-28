@@ -15,8 +15,8 @@ const datas_slide= [
         description:"Arabica, Epices, cafes. le cordiceps militarices fortifie et donne une vitaliter"
     },
      {
-        titre:"Payez par mobile money",
-        description:"Regler vos achats pas MTN Mobile money ou Orange money et faites vous livrez en 48h "
+        titre:"Poivre blanc et noir de Penja",
+        description:"Le poivre de Penja est un poivre de qualité supérieure, reconnu pour son goût unique et sa saveur intense. Il est cultivé dans la région de Penja au Cameroun."
     }
 ]
 
@@ -55,8 +55,84 @@ declaration des variables
 =====================================
 */
 
-const slide= document.querySelectorAll("#carrousel .slide"); 
-const slide_left= document.querySelector("#carrousel .slide_left"); 
-const slide_right= document.querySelector("#carrousel .slide_right"); 
-//contient l'indice du slide actuellemnt afficher
-let slide_courant= 0;
+const slides = document.querySelectorAll("#carrousel .slide");
+const slide_left = document.querySelectorAll("#carrousel .slide_left");
+const slide_right = document.querySelectorAll("#carrousel .slide_right");
+
+// contient l'indice du slide actuellement affiché
+let slide_courant = 0;
+
+
+/*
+====================================
+MASQUER TOUT LES SLIDES SAUF LE PREMIER
+====================================
+*/
+
+for(let i=1; i< slides.length; i++) {
+    slides[i].classList.add('hide');
+}
+
+/*
+====================================
+QUELQUES FONCTIONS UTILES
+====================================
+*/
+
+//FONCTION PERMETTANT D'AFFICHER UN SLIDE
+
+function showSlide(index,direction) {
+    //on masque le slide courant
+    slides[slide_courant].classList.add('hide');
+
+    //on cherche l'indice du nouveau slide a afficher
+    if(direction.trim().toLowerCase() == "right")  {
+        if(index >= slides.length){
+            slide_courant=0;
+        }
+        else {
+            slide_courant=index;
+        }
+    }
+    else if(direction.trim().toLowerCase() == "left") {
+        if(index < 0){
+            slide_courant=slides.length - 1;        }
+        else {
+            slide_courant=index;
+        }
+    }
+    else {
+        slide_courant= index;
+    }
+//on affiche le slide courant 
+    slides[slide_courant].classList.remove('hide');
+}
+
+/*
+====================================
+LANCER LE SLIDE
+====================================
+*/
+
+slide_left.forEach(function(element) {
+    element.addEventListener("click", function(e) {
+        showSlide(slide_courant - 1, "left");
+    });
+});
+
+slide_right.forEach(function(element) {
+    element.addEventListener("click", function(e) {
+        showSlide(slide_courant + 1, "right");
+    });
+});
+
+
+/*
+====================================
+LANCER LE SLIDE AUTOMATIQUEMENT
+====================================
+*/
+
+setInterval(function() {
+     showSlide(slide_courant + 1, "right");
+}, 5000);
