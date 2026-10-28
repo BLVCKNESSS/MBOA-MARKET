@@ -13,7 +13,7 @@ declaration des variables
   --warning-color: darkorange;
   --danger-color: darkred;
   --slide-bg-color: rgba(0, 0, 0, 0.45);
-  --main-font: "segeo ui" system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --main-font: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
   --title-font: forte, arial, sans-serif;
   --font-size: 12pt;
 }
@@ -322,7 +322,7 @@ design boutique
     gap: 10px;
     padding: 0px 20px;
     background-color: var(--white-color);
-    border: 1px sloid var(--second-color);
+    border: 1px solid var(--second-color);
     border-radius: 30px;
 }
 
@@ -338,7 +338,7 @@ design boutique
 
 #boutique select {
     padding: 0px 20px;
-    border: 1px slid var(--second-color);
+    border: 1px solid var(--second-color);
     border-radius: 30px;
     cursor: pointer;
     font-size: var(--font-size);
@@ -370,6 +370,6 @@ transition: all 0.4s ease-in-out;
 
 #produits{
     display: grid;
-    grid-template-columns: repeat(ato-fit, minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
     gap: 25px;
 }
