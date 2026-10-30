@@ -77,6 +77,78 @@
     <p>Tel : 616 00 73 02 | email: mboa@iuc.com </p>
   </footer>
 
+
+  <!-- Fenetre modal pour le panier -->
+  <div id="modal_commande" class="hide">
+    <div class="modal_container">
+      <button type="button" id="modal_fermer" aria-label="Fermer la fenêtre">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+    <form id="modal_form" action="#" method="POST">
+      <fieldset class="commande_info">
+        <legend>Finaliser ma Commande</legend>
+
+        <div class="champ">
+          <label for="nom">Nom complet</label>
+          <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+        </div>
+
+        <div class="champ">
+          <label for="telephone">Telephone Mobile</label>
+          <input type="tel" id="telephone" name="telephone" placeholder="Ex: 6 xx xx xx xx" required>
+        </div>
+
+        <div class="champ">
+          <label for="ville">Ville de livraison</label>
+          <select name="ville" id="ville">
+            <option value="Douala">Douala</option>
+            <option value="Yaounde">Yaounde</option>
+          </select>
+        </div>
+
+        <div class="champ">
+          <label for="paiement">Moyen de paiement</label>
+          <select name="paiement" id="paiement">
+            <option value="Orange Money">Orange Money</option>
+            <option value="Mtn Mobile Money">Mtn Mobile Money</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset class="commande_produit">
+        <legend>Recapitulatif de la commande</legend>
+        <table border="0" cellpadding="4" cellspacing="8">
+          <thead>
+            <tr>
+              <th>Produit</th>
+              <th>PU (FCFA)</th>
+              <th>QTE</th>
+              <th>Montant (FCFA)</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+
+          <tbody id="liste_produits">
+          </tbody>
+        </table>
+        
+        <div class="total_commande"></div>
+
+        <div class="submit">
+          <input type="submit" id="btn_valider" value="Valider la commande">
+        </div>
+      </fieldset>
+    </form>
+
+
+    <div id="confirmation" class="hide">
+    </div>
+    </div>
+    
+  </div>
+
+
   <!--gestion du javascript-->
   <script type="text/javascript" src="js/carrousel.js"></script>
   <script type="text/javascript" src="js/boutique.js"></script>
